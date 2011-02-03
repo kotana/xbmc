@@ -864,6 +864,9 @@
     <ClCompile Include="..\..\xbmc\FileSystem\StackDirectory.cpp">
       <Filter>filesystem</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\xbmc\FileSystem\SourcesDirectory.cpp">
+      <Filter>filesystem</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\xbmc\FileSystem\UPnPDirectory.cpp">
       <Filter>filesystem</Filter>
     </ClCompile>
@@ -3200,6 +3203,9 @@
       <Filter>filesystem</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\FileSystem\StackDirectory.h">
+      <Filter>filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\xbmc\FileSystem\SourcesDirectory.h">
       <Filter>filesystem</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\FileSystem\UPnPDirectory.h">
