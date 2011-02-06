@@ -35,16 +35,13 @@
 #include "Video/DVDVideoCodecCrystalHD.h"
 #endif
 #include "Audio/DVDAudioCodecFFmpeg.h"
-#ifdef USE_LIBA52_DECODER
-  #include "Audio/DVDAudioCodecLiba52.h"
-#endif
 #ifdef USE_LIBDTS_DECODER
   #include "Audio/DVDAudioCodecLibDts.h"
 #endif
 #include "Audio/DVDAudioCodecLibMad.h"
 #include "Audio/DVDAudioCodecPcm.h"
 #include "Audio/DVDAudioCodecLPcm.h"
-#if defined(USE_LIBA52_DECODER) || defined(USE_LIBDTS_DECODER)
+#if defined(USE_LIBDTS_DECODER)
   #include "Audio/DVDAudioCodecPassthrough.h"
 #endif
 #include "Audio/DVDAudioCodecPassthroughFFmpeg.h"
@@ -238,7 +235,7 @@ CDVDAudioCodec* CDVDFactoryCodec::CreateAudioCodec( CDVDStreamInfo &hint, bool p
 
   if (passthrough)
   {
-#if (defined(USE_LIBA52_DECODER) || defined(USE_LIBDTS_DECODER)) && !defined(WIN32)
+#if (defined(USE_LIBDTS_DECODER)) && !defined(WIN32)
     pCodec = OpenCodec( new CDVDAudioCodecPassthrough(), hint, options );
     if( pCodec ) return pCodec;
 #endif
@@ -249,14 +246,6 @@ CDVDAudioCodec* CDVDFactoryCodec::CreateAudioCodec( CDVDStreamInfo &hint, bool p
 
   switch (hint.codec)
   {
-#ifdef USE_LIBA52_DECODER
-  case CODEC_ID_AC3:
-    {
-      pCodec = OpenCodec( new CDVDAudioCodecLiba52(), hint, options );
-      if( pCodec ) return pCodec;
-      break;
-    }
-#endif
 #ifdef USE_LIBDTS_DECODER
   case CODEC_ID_DTS:
     {
