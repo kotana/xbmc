@@ -1853,9 +1853,6 @@
     <ClCompile Include="..\..\xbmc\storage\cdioSupport.cpp">
       <Filter>storage</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\xbmc\storage\DetectDVDType.cpp">
-      <Filter>storage</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\xbmc\storage\IoSupport.cpp">
       <Filter>storage</Filter>
     </ClCompile>
@@ -4330,9 +4327,6 @@
       <Filter>storage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\storage\cdioSupport.h">
-      <Filter>storage</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\xbmc\storage\DetectDVDType.h">
       <Filter>storage</Filter>
     </ClInclude>
     <ClInclude Include="..\..\xbmc\storage\IoSupport.h">
